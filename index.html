@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Code Design</title>
+  <link rel="shortcut icon" href="https://johnorgs.github.io/designers/desk.ico" />
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style type="text/css">
+   #head, #head * { transition: all 0.3s ease; }
+#head.shrinked
+{
+  height: 80px;
+  background-color: white;
+  opacity: 1;
+}
+   /* Let's get this party started */
+::-webkit-scrollbar {
+    width: 5px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(555,0,0,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255,0,0,0.4); 
+
+}
+
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.image-container .after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    color: #FFF;
+}
+.image-container:hover .after {
+  -webkit-transition: opacity 2s ease-in;
+  transition: opacity 2s ease-in;
+    display: block;
+    /*background: rgba(0, 0, 0, .6);*/
+    background: url("http://bbd.basicagencydev.com/wp-content/uploads/2015/10/W15-BF43516-DASHA-05-340x510.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 550px;
+}
+
+
+
+.image-container2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.image-container2 .after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    color: #FFF;
+}
+.image-container2:hover .after {
+  -webkit-transition: opacity 2s ease-in;
+  transition: opacity 2s ease-in;
+    display: block;
+    /*background: rgba(0, 0, 0, .6);*/
+    background: url("http://bbd.basicagencydev.com/wp-content/uploads/2015/10/CALLAN-Detail-1-340x510.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 550px;
+}
+
+.image-container3 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.image-container3 .after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    color: #FFF;
+}
+.image-container3:hover .after {
+  -webkit-transition: opacity 2s ease-in;
+  transition: opacity 2s ease-in;
+    display: block;
+    /*background: rgba(0, 0, 0, .6);*/
+    background: url("http://bbd.basicagencydev.com/wp-content/uploads/2015/10/NATALIA-Detail-2-340x510.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 550px;
+}
+
+.image-container1 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.image-container1 .after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    color: #FFF;
+}
+.image-container1:hover .after {
+  -webkit-transition: opacity 2s ease-in;
+  transition: opacity 2s ease-in;
+    display: block;
+    /*background: rgba(0, 0, 0, .6);*/
+    background: url("http://bbd.basicagencydev.com/wp-content/uploads/2015/10/LAINE-Detail-2-340x510.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 550px;
+}
+
+
+  #t3
+  {
+    background: url("http://bbd.basicagencydev.com/wp-content/uploads/2015/12/greylayers_babesinbbd-700x700.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 600px;
+  }
+  #t1
+  {
+    background: url("http://gq-images.condecdn.net/image/N2Jj7BrGgxr/crop/1620");
+    background-repeat: no-repeat;
+    background-size: 100% 600px;
+  }
+  #t4{
+    background: url("http://www.hdwallpapersnews.com/wp-content/uploads/2015/04/Men_Clothing-Images.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 600px;
+  }
+  #t2{
+    background: url("http://bbd.basicagencydev.com/wp-content/uploads/2015/11/Large-Image-860-x-920.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 600px;
+  }
+  #pp1
+  {
+    padding: 10px;
+    height: 550px;
+  }
+#pp2
+  {
+    padding: 10px;
+    height: 550px;
+  }
+  div.relative{
+    position: relative;
+  }
+  div.absolute{
+    position: absolute;
+  }
+ 
+@font-face
+{
+  font-family:font1;
+  src:url(anke.ttf);
+}
+#headers{
+  font-family: font2;
+  color: black;
+  
+}
+@font-face
+{
+  font-family:font2;
+  src:url(shab.ttf);
+}
+@font-face
+{
+  font-family:font3;
+  src:url(ampt.ttf);
+}
+@font-face
+{
+  font-family:font4;
+  src:url(bastard.ttf);
+}
+#hxx
+{
+  font-family: font2;
+  font-size: 20px;
+  color: black;
+  list-style: block;
+}
+#tt3{
+  
+  height: 450px;
+  width: 100%;
+}
+#y2{
+  color: black;
+ 
+}
+#a1{font-family: font2;}
+#a2{width: 70%;}
+#a3{font-family: font1;}
+#tt3{width: 80%;}
+#a4{
+  font-family: font2;
+  color: black;
+}
+#a5{
+font-family: font1;
+color: black;
+}
+
+
+.bounce {
+  display: inline-block;
+  position: relative;
+  -moz-animation: bounce 0.5s infinite linear;
+  -o-animation: bounce 0.5s infinite linear;
+  -webkit-animation: bounce 0.5s infinite linear;
+  animation: bounce 0.5s infinite linear;
+  colr:000;
+}
+.fa-sort-down{
+  color: #027bdd;
+  font-size: 30px;
+  margin: 20px;
+}
+@-webkit-keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}
+@-moz-keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}
+@-o-keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}
+@-ms-keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}
+@keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}
+#hh3{
+  font-family: font3;
+}
+#hh4{
+font-family: font1;
+}
+#hh5{
+  width: 70%;
+}
+#bb1{
+  height: 100%;
+}
+#zz{
+  font-size: 13px;
+}
+#ss1{
+  font-family: font4;
+  font-size: 25px;
+
+}
+
+
+
+.image-container4{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.image-container4 .after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    color: #FFF;
+}
+.image-container4:hover .after {
+  -webkit-transition: opacity 2s ease-in;
+  transition: opacity 2s ease-in;
+    display: block;
+    /*background: rgba(0, 0, 0, .6);*/
+    background: url("http://bbd.basicagencydev.com/wp-content/uploads/2015/10/JF48182-MARTELLI-01-340x510.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 550px;
+}
+
+
+
+.image-container5 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.image-container5 .after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    color: #FFF;
+}
+.image-container5:hover .after {
+  -webkit-transition: opacity 2s ease-in;
+  transition: opacity 2s ease-in;
+    display: block;
+    /*background: rgba(0, 0, 0, .6);*/
+    background: url("http://bbd.basicagencydev.com/wp-content/uploads/2015/10/SCOUT-Detail-1-340x510.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 550px;
+}
+
+
+
+
+.image-container6 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.image-container6 .after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    color: #FFF;
+}
+.image-container6:hover .after {
+  -webkit-transition: opacity 2s ease-in;
+  transition: opacity 2s ease-in;
+    display: block;
+    /*background: rgba(0, 0, 0, .6);*/
+    background: url("http://bbd.basicagencydev.com/wp-content/uploads/2015/10/KENZIE-Detail-2-340x510.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 550px;
+}
+
+
+
+.image-container7 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.image-container7 .after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    color: #FFF;
+}
+.image-container7:hover .after {
+  -webkit-transition: opacity 2s ease-in;
+  transition: opacity 2s ease-in;
+    display: block;
+    /*background: rgba(0, 0, 0, .6);*/
+    background: url("http://bbd.basicagencydev.com/wp-content/uploads/2015/10/ADWIN-Detail-2-340x510.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 550px;
+}
+
+  </style>
+</head>
+<body id="home">
+
+  <div class="navbar-fixed" id="head">
+    <nav class="white lighten-1">
+    <div class="nav-wrapper">
+      <a href="#home" class="brand-logo center" id="headers">Fashion<span class="light pink-text">&#x2661;</span>  </a>
+      <!--<ul class="left hide-on-med-and-down">
+        <li><a href="#" id="hxx">--Clothing--</a></li>
+        <li><a href="#" id="hxx">--Collection--</a></li>
+        
+      </ul>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#" id="hxx">--Journal--</a></li>
+        <li><a href="#" id="hxx">--About--</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse" id="y2"><i class="material-icons">menu</i></a>
+    </div>-->
+
+    </nav>
+  </div>
+
+
+
+  <!--<nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>-->
+  
+
+<div class="carousel carousel-slider center" data-indicators="true" style="height:600px;" > 
+    <div class="carousel-fixed-item center">
+      
+    </div>
+
+    <div class="carousel-item red white-text" href="#one!" id="t1">
+      <!--<img src="http://lorempixel.com/800/400/food/1" style="width:100%;height:100%;">-->
+       <div class="container">
+        
+        <div class="row">
+          <div class="col s12  l4"></div>
+          <div class="col s12  l2" ></div>
+          <div class="col s12  l6" >
+              <div id="tt3" class="container">
+                <br><br>
+              <div class="row center z-depth-3">
+                <br>
+                <h3 id="a1" >Yes &#x2661;</h3>
+                <hr id="a2">
+                <br>
+                <h7 id="a3">Established in 2007, JB is an online design label based in Los Angeles. With LA as the source of our inspiration, we bring the casual, cool, and sexy attitude of the city into every one of our products. Every day we are designing the trendiest fashion clothes straight from our design studio and selling them exclusively on our online clothing store at to.com.</h7>
+                <br><br><br>
+                <a href="#"><span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x"></i>
+                </span></a>
+                <a href="#"><span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x"></i>
+                </span></a>
+                <a href="#"><span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-google fa-stack-1x"></i>
+                </span></a>
+                <hr id="a2">
+                <div class="row center">
+          <a href="#index-banner" ><i class="fa fa-sort-down bounce" style="font-size:48px;color:white"></i></a>
+        </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+
+
+    <div class="carousel-item amber white-text" href="#two!" id="t2">
+      <!--<img src="http://lorempixel.com/800/400/food/1" style="width:100%;height:100%;">-->
+       <div class="container">
+        
+        <div class="row">
+          
+          <div class="col s12  l6" >
+              <div id="tt3" class="container">
+                <br><br>
+              <div class="row center z-depth-3">
+                <br>
+                <h3 id="a1" >Yes &#x2661;</h3>
+                <hr id="a2">
+                <br>
+                <h7 id="a3">Established in 2007, JB is an online design label based in Los Angeles. With LA as the source of our inspiration, we bring the casual, cool, and sexy attitude of the city into every one of our products. Every day we are designing the trendiest fashion clothes straight from our design studio and selling them exclusively on our online clothing store at to.com.</h7>
+                <br><br><br>
+                <a href="#"><span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x"></i>
+                </span></a>
+                <a href="#"><span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x"></i>
+                </span></a>
+                <a href="#"><span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-google fa-stack-1x"></i>
+                </span></a>
+                <hr id="a2">
+                <div class="row center">
+          <a href="#index-banner" ><i class="fa fa-sort-down bounce" style="font-size:48px;color:white"></i></a>
+        </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col s12  l4"></div>
+          <div class="col s12  l2" ></div>
+        </div>
+    </div>
+    <div class="carousel-item green white-text" href="#three!" id="t3">
+      <!--<img src="http://lorempixel.com/800/400/food/1" style="width:100%;height:100%;">-->
+       <div class="container">
+        
+        <div class="row">
+          <div class="col s12  l4"></div>
+          <div class="col s12  l2" ></div>
+          <div class="col s12  l6" >
+              <div id="tt3" class="container">
+                <br><br>
+              <div class="row center z-depth-3">
+                <br>
+                <h3 id="a4" >Yes &#x2661;</h3>
+                <hr id="a2">
+                <br>
+                <h7 id="a4"><b>Established in 2007, JB is an online design label based in Los Angeles. With LA as the source of our inspiration, we bring the casual, cool, and sexy attitude of the city into every one of our products. Every day we are designing the trendiest fashion clothes straight from our design studio and selling them exclusively on our online clothing store at to.com.</b></h7>
+                <br><br><br>
+                <a href="#"><span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x"></i>
+                </span></a>
+                <a href="#"><span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x"></i>
+                </span></a>
+                <a href="#"><span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-google fa-stack-1x"></i>
+                </span></a>
+                <hr id="a2">
+                <div class="row center">
+          <a href="#index-banner" ><i class="fa fa-sort-down bounce" style="font-size:48px;color:white"></i></a>
+        </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+    <div class="carousel-item blue white-text" href="#four!" id="t4">
+     <!--<img src="http://lorempixel.com/800/400/food/1" style="width:100%;height:100%;">-->
+       <div class="container">
+       
+        <div class="row">
+          
+          <div class="col s12  l6" >
+              <div id="tt3" class="container">
+                <br><br>
+              <div class="row center z-depth-3">
+                <br>
+                <h3 id="a4" >Yes &#x2661;</h3>
+                <hr id="a2">
+                <br>
+                <h7 id="a5"><b>Established in 2007, JB is an online design label based in Los Angeles. With LA as the source of our inspiration, we bring the casual, cool, and sexy attitude of the city into every one of our products. Every day we are designing the trendiest fashion clothes straight from our design studio and selling them exclusively on our online clothing store at to.com.</b></h7>
+                <br><br><br>
+                <a href="#"><span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x"></i>
+                </span></a>
+                <a href="#"><span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x"></i>
+                </span></a>
+                <a href="#"><span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-google fa-stack-1x"></i>
+                </span></a>
+                <hr id="a2">
+                <div class="row center">
+          <a href="#index-banner" ><i class="fa fa-sort-down bounce" style="font-size:48px;color:white"></i></a>
+        </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col s12  l4"></div>
+          <div class="col s12  l2" ></div>
+        </div>
+    </div>
+  </div>
+
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+     <br>
+      <h4 class="header center black-text" id="hh3"><b>Find your  Travel</b></h4>
+      <hr id="hh5">
+      <div class="row center">
+        <h7 class="header col s12 light" >As featured on Harper's Bazaar, find you California's Nico Guilis shoots Vanessa Hudgens in Lisbon, Portugal.</h7>
+      </div>
+      
+
+    </div>
+  </div>
+
+
+   <div class="container">
+    
+      
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4" id="bb1" >
+          
+            <img src="http://bbd.basicagencydev.com/wp-content/uploads/2015/10/Img1.jpg" class="center z-depth-3" style="width:100%;height:250px;" >
+            
+         
+          
+        </div>
+<div class="col s12 m4" id="bb1" >
+          
+            <img src="http://bbd.basicagencydev.com/wp-content/uploads/2016/01/img2-perdre_la_femme.jpg" class="center z-depth-3" style="width:100%;height:250px;" >
+            
+         
+          
+        </div>
+        <div class="col s12 m4" id="bb1" >
+          
+            <img src="http://bbd.basicagencydev.com/wp-content/uploads/2016/01/img1-perdre_la_femme.jpg" class="center z-depth-3" style="width:100%;height:250px;" >
+            
+         
+          
+        </div>
+
+       
+          
+        </div>
+        <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4" id="bb1" >
+          
+            <img src="http://bbd.basicagencydev.com/wp-content/uploads/2015/12/greylayers_babesinbbd-700x700.jpg" class="center z-depth-3" style="width:100%;height:250px;" >
+            
+         
+          
+        </div>
+<div class="col s12 m4" id="bb1" z-depth-3>
+          
+            <div class="center container ">
+              <p id="zz">ESCAPE TO LISBON</p>
+              
+               <h6 id="ss1"><b>Find your California travel</b></h6>
+               <hr>
+               <p id="zz">As featured on Harper's Bazaar, find you California's Nico Guilis shoots Vanessa Hudgens in Lisbon, Portugal.</p>
+               <a class="waves-effect waves-light btn " href="#met"><b>Explore</b></a>
+            </div>
+             
+         
+          
+        </div>
+        <div class="col s12 m4" id="bb1" >
+          
+            <img src="http://bbd.basicagencydev.com/wp-content/uploads/2015/11/Amy-Poehler-seen-leaving-the-Magic-Radio-Studios1.jpg" class="center z-depth-3" style="width:100%;height:250px;" >
+            
+         
+          
+        </div>
+
+       
+          
+        </div>
+        <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4" id="bb1" >
+          
+            <img src="http://bbd.basicagencydev.com/wp-content/uploads/2015/11/DSCF1898-low-crop-393x393.jpg" class="center z-depth-3" style="width:100%;height:250px;" >
+            
+         
+          
+        </div>
+<div class="col s12 m4" id="bb1" >
+          
+            <img src="http://bbd.basicagencydev.com/wp-content/uploads/2015/11/Screenshot-46-700x702.jpg" class="center z-depth-3" style="width:100%;height:250px;" >
+            
+         
+          
+        </div>
+        <div class="col s12 m4" id="bb1" >
+          
+            <img src="http://bbd.basicagencydev.com/wp-content/uploads/2015/11/Screenshot-45-700x696.jpg" class="center z-depth-3" style="width:100%;height:250px;" >
+            
+         
+          
+        </div>
+
+       
+          
+        </div>
+
+
+
+        
+
+
+
+
+
+
+
+       
+
+        
+
+        
+
+        
+
+    </div>
+
+
+
+<div class="section no-pad-bot" id="met">
+    <div class="container">
+      <br><br>
+      <h4 class="header center black-text" id="hh3"><b>Burning Up Collection</b></h4>
+      <hr id="hh5">
+      <div class="row center">
+        <p class="header col s12 light">Sequins, sweeping necklines, big hair, dramatic eyes, a come-hither stare. Taking names, turning heads and setting trends. She's a brick house.</p>
+      </div>
+      
+     
+
+    </div>
+  </div>
+
+
+  <div class="container">
+  <div class="row">
+    <div class="col s12 m6 l3" id="pp1">
+      <div class="image-container z-depth-3">
+        <img src="http://bbd.basicagencydev.com/wp-content/uploads/2015/10/BF43516-DASHA-04-340x510.jpg" style="width:100%;height:100%;">
+        <div class="after" style="padding:5px;">
+          <div class="container"><br><br> <br><br> 
+            <div class="row center">
+              <h3 id="a1">Dasha Lace Romper</h3>
+              <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m6 l3" id="pp2">
+      <div class="image-container1 z-depth-3">
+        <img src="http://bbd.basicagencydev.com/wp-content/uploads/2015/10/LAINE-Detail-1-340x510.jpg" style="width:100%;height:100%;">
+        <div class="after" style="padding:5px;">
+          <div class="container"><br><br>  <br><br>
+            <div class="row center">
+              <h3 id="a1">Laine Strappy Dress</h3>
+              <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m6 l3" id="pp1">
+      <div class="image-container2 z-depth-3">
+        <img src="http://bbd.basicagencydev.com/wp-content/uploads/2015/10/CALLAN-Detail-2-340x510.jpg" style="width:100%;height:100%;">
+        <div class="after" style="padding:5px;">
+          <div class="container"><br><br>  <br><br>
+            <div class="row center">
+              <h3 id="a1">Callan Sequin Romper</h3>
+              <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col s12 m6 l3" id="pp1">
+      <div class="image-container3 z-depth-3">
+        <img src="http://bbd.basicagencydev.com/wp-content/uploads/2015/10/NATALIA-Detail-1-340x510.jpg" style="width:100%;height:100%;">
+        <div class="after" style="padding:5px;">
+          <div class="container"><br><br>  <br><br>
+            <div class="row center">
+              <h3 id="a1">Natalia Lace Dress</h3>
+              <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+  <div class="row center"><a class="waves-effect waves-light btn red">More</a></div>
+  </div>
+  <div class="fixed-action-btn toolbar">
+    <a class="btn-floating btn-large black">
+      <i class="large material-icons">menu</i>
+    </a>
+    <ul>
+      <li class="waves-effect waves-light"><a href="#topd"><i class="material-icons">info_outline</i></a></li>
+      <li class="waves-effect waves-light"><a href="#met"><i class="material-icons">store</i></a></li>
+      <li class="waves-effect waves-light"><a href="#index-banner"><i class="material-icons">place</i></a></li>
+      <li class="waves-effect waves-light"><a href="#home"><i class="material-icons">home</i></a></li>
+    </ul>
+  </div>
+
+    <br>
+     <div class="container"> 
+
+      <h4 class="header center black-text" id="hh3"><b>Perdrre La Femme Collection</b></h4>
+      <hr id="hh5">
+      <div class="row center">
+        <p class="header col s12 light">Write a song, do a dance; there's something about that velvet dress. In the middle of nowhere you can get away with anything.</p>
+      </div>
+      <div class="parallax-container">
+      
+      <!--<div class="row center">
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+        <div class="container">
+          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        </div>
+        
+      </div>-->
+      
+      <div class="parallax"><img src="http://bbd.basicagencydev.com/wp-content/uploads/2015/11/EricaLavelanet1-700x467.jpg"></div>
+      </div>
+    </div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col s12 m6 l3" id="pp1">
+      <div class="image-container4 z-depth-3">
+        <img src="http://bbd.basicagencydev.com/wp-content/uploads/2015/10/MARTELLI.-Detail-2-340x510.jpg" style="width:100%;height:100%;">
+        <div class="after" style="padding:5px;">
+          <div class="container">
+            <div class="row center">
+              <br><br>
+              <br><br>
+              <h3 id="a1" class="">Martelle Velvet Dress</h3>
+              
+              <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m6 l3" id="pp2">
+      <div class="image-container5 z-depth-3">
+        <img src="http://bbd.basicagencydev.com/wp-content/uploads/2015/10/SCOUT-Detail-2-340x510.jpg" style="width:100%;height:100%;">
+        <div class="after" style="padding:5px;">
+          <div class="container"><br><br>  <br><br>
+            <div class="row center">
+              <h3 id="a1">Scout Sweater Dress</h3>
+              <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m6 l3" id="pp1">
+      <div class="image-container6 z-depth-3">
+        <img src="http://bbd.basicagencydev.com/wp-content/uploads/2015/10/KENZIE-Detail-1-340x510.jpg" style="width:100%;height:100%;">
+        <div class="after" style="padding:5px;">
+          <div class="container"><br><br>  <br><br>
+            <div class="row center">
+              <h3 id="a1">Kenzie Velvet Dress</h3>
+              <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col s12 m6 l3" id="pp1">
+      <div class="image-container7 z-depth-3">
+        <img src="http://bbd.basicagencydev.com/wp-content/uploads/2015/10/ADWIN-Detail-3-340x510.jpg" style="width:100%;height:100%;">
+        <div class="after" style="padding:5px;">
+          <div class="container"><br><br> 
+            <div class="row center">
+              <h3 id="a1">Bandele Snap Front Short</h3>
+              <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+<div class="row center"><a class="waves-effect waves-light btn red">More</a></div>
+</div>
+  
+    <div class="container">
+      <br>
+       <h4 class="header center black-text" id="hh3"><b>Collection</b></h4>
+      <hr id="hh5">
+      <div class="row center">
+        <p class="header col s12 light">Glamour is looking Exquisite and not giving a f**k.</p>
+      </div>
+      <video class="quote-reveal-video" autoplay loop muted style="width:100%;"><source src="http://bbd.basicagencydev.com/wp-content/uploads/2015/10/jack-keepdancing.mp4" type="video/mp4" ></video>
+    </div>
+
+
+
+
+
+
+  <footer class="page-footer white">
+    <div class="container">
+      <div class="row center">
+
+        <h4 class="header center black-text" id="topd" ><span id="hh3">About <span class="pink-text">Us</span></span></h4>
+      <hr id="hh5">
+        <a href="https://www.facebook.com/profile.php?id=100010927862735" target="_blank"><span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x"></i>
+                </span></a>
+                <a href="https://plus.google.com/u/1/104902651801932181771" target="_blank"><span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-google fa-stack-1x"></i>
+                </span></a>
+                <a href="https://www.instagram.com/bjohnx/" target="_blank"><span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-instagram fa-stack-1x"></i>
+                </span></a>
+                <a href="#"><span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-whatsapp fa-stack-1x"></i>
+                </span></a>
+                <a href="https://github.com/johnorgs" target="_blank"><span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x "></i>
+                </span></a>
+                
+      </div>
+    </div>
+    <div class="footer-copyright">
+
+      <div class="container black-text" id="hh3">
+
+      Made by <a class="black-text text-lighten-3" href="#">@John 2016</a>
+      </div>
+    </div>
+  </footer>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+      $('.carousel').carousel();
+    });
+  $('.carousel.carousel-slider').carousel({full_width: true});</script>
+  </body>
+  <script>
+    $(document).scroll(function() {
+        if ($(this).scrollTop() > 100) { //Adjust 150
+        $('#head').addClass('shrinked');
+        } else {
+        $('#head').removeClass('shrinked');
+        }
+    });
+  </script>
+
+<script >
+  $('a[href*="#"]:not([href="#"])').click(function() {
+      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+          $('html, body').animate({
+          scrollTop: target.offset().top
+          }, 900);
+          return false;
+        }
+      }
+  });
+  </script>
+  <script type="text/javascript">  $(document).ready(function(){
+      $('.parallax').parallax();
+    });</script>
+</html>
